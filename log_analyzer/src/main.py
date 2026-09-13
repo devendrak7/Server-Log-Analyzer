@@ -1,5 +1,5 @@
 import os
-
+from generate_sample_log import generate_log
 from src.log_parser import parse_log_line
 from src.data_cleaner import create_dataframe
 from src.analysis import calculate_statistics
@@ -10,7 +10,7 @@ from src.visualize import (
     plot_top_ips,
     plot_top_endpoints,
 )
-
+generate_log()
 
 LOG_FILE = "data/sample_access.log"
 CHARTS_DIR = "output/charts"
