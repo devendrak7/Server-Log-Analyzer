@@ -6,7 +6,7 @@ __pycache__/
 *.pyc
 
 # Generated log data
-data/sample_access.log
+log_analyzer/data/sample_access.log
 
 # Generated output
-output/
+log_analyzer/output/
