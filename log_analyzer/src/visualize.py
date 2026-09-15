@@ -1,9 +1,19 @@
 import matplotlib.pyplot as plt
 
-def plot_requests_over_time(requests_per_minute,anomalies,output_path):
+def plot_requests_over_time(requests_per_minute, anomalies, output_path):
     plt.figure(figsize=(12, 6))
-    plt.plot( requests_per_minute.index, requests_per_minute.values,label="Requests per minute")
-    plt.scatter(requests_per_minute.index[anomalies],requests_per_minute[anomalies],label="Anomaly")
+
+    plt.plot(
+        requests_per_minute.index,
+        requests_per_minute.values,
+        label="Requests per minute"
+    )
+
+    plt.scatter(
+        requests_per_minute.index[anomalies],
+        requests_per_minute[anomalies],
+        label="Anomaly"
+    )
 
     plt.xlabel("Time")
     plt.ylabel("Requests")
@@ -12,6 +22,7 @@ def plot_requests_over_time(requests_per_minute,anomalies,output_path):
     plt.tight_layout()
     plt.savefig(output_path)
     plt.close()
+
 
 def plot_status_distribution(status_distribution, output_path):
     plt.figure(figsize=(8, 5))
@@ -24,6 +35,7 @@ def plot_status_distribution(status_distribution, output_path):
     plt.tight_layout()
     plt.savefig(output_path)
     plt.close()
+
 
 def plot_top_ips(top_ips, output_path):
     plt.figure(figsize=(10, 6))
