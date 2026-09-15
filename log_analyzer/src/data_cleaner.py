@@ -8,8 +8,10 @@ def create_dataframe(parsed_logs):
         df["timestamp"],
         format="%d/%b/%Y:%H:%M:%S %z"
     )
-
+    # Make timestamp the DataFrame index
+    df = df.set_index("timestamp")
     return df
+
 def clean_data(df):
     if df.empty:
         return df
